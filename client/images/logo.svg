@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Effets de lumière -->
+    <defs>
+        <radialGradient id="crystalGlow" cx="50%" cy="40%" r="60%" fx="45%" fy="35%">
+            <stop offset="0%" style="stop-color:#B794F4;stop-opacity:0.4"/>
+            <stop offset="100%" style="stop-color:#4A2B8C;stop-opacity:0"/>
+        </radialGradient>
+        <linearGradient id="crystalFace" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#9B6DFF"/>
+            <stop offset="100%" style="stop-color:#7B61FF"/>
+        </linearGradient>
+    </defs>
+    
+    <!-- Aura -->
+    <path d="M256 80C370 80 420 180 420 256C420 332 370 432 256 432C142 432 92 332 92 256C92 180 142 80 256 80Z" 
+          fill="url(#crystalGlow)" filter="url(#glow)"/>
+    
+    <!-- Cristal principal -->
+    <path d="M256 120L380 200L340 360L256 420L172 360L132 200L256 120Z" 
+          fill="url(#crystalFace)" fill-opacity="0.9"/>
+    
+    <!-- Facettes -->
+    <path d="M256 120L380 200L256 240L132 200L256 120Z" 
+          fill="#B794F4" fill-opacity="0.95"/>
+    <path d="M256 240L340 360L256 420L172 360L256 240Z" 
+          fill="#4A2B8C" fill-opacity="0.9"/>
+    
+    <!-- Reflets -->
+    <path d="M200 160L256 200L220 240L170 210Z" 
+          fill="white" fill-opacity="0.3"/>
+    <path d="M292 280L340 320L310 360L270 330Z" 
+          fill="white" fill-opacity="0.2"/>
+    
+    <!-- Points lumineux -->
+    <circle cx="210" cy="180" r="4" fill="white" fill-opacity="0.8"/>
+    <circle cx="300" cy="300" r="3" fill="white" fill-opacity="0.6"/>
+    <circle cx="180" cy="270" r="2" fill="white" fill-opacity="0.7"/>
+    
+    <!-- Contours lumineux -->
+    <path d="M256 120L380 200L340 360L256 420L172 360L132 200L256 120Z" 
+          stroke="#B794F4" stroke-width="2" stroke-opacity="0.6"
+          filter="url(#glow)"/>
+    
+    <!-- Effets -->
+    <defs>
+        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="15" result="blur"/>
+            <feFlood flood-color="#9B6DFF" flood-opacity="0.3"/>
+            <feComposite in2="blur" operator="in"/>
+            <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+</svg> 
